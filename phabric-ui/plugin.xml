@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.repositories">
+      <connectorCore
+            class="net.blackphoton.phabric.core.PhabricRepositoryConnector"
+            name="Phabricator Connector Core">
+      </connectorCore>
+      <connectorUi
+            brandingIcon="icons/trac-icon.gif"
+            class="net.blackphoton.phabric.ui.PhabricConnectorUI"
+            name="Phabricator Connector UI ">
+      </connectorUi>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.core.templates">
+      <repository
+            label="Phabricator"
+            repositoryKind="phabric"
+            urlRepository="https://secure.phabricator.com/api/">
+      </repository>
+   </extension>
+   <extension
+         point="org.eclipse.mylyn.tasks.ui.editors">
+      <pageFactory
+            class="net.blackphoton.phabric.ui.editor.PhabricTaskEditorPageFactory"
+            id="net.blackphoton.phabric.ui.pageFactory">
+      </pageFactory>
+   </extension>
+
+</plugin>
