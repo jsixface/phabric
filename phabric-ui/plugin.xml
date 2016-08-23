@@ -18,7 +18,7 @@
       <repository
             label="Phabricator"
             repositoryKind="phabric"
-            urlRepository="https://secure.phabricator.com/api/">
+            urlRepository="https://secure.phabricator.com/">
       </repository>
    </extension>
    <extension
