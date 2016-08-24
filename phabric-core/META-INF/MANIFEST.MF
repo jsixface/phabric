@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Phabricator Connector Core
-Bundle-SymbolicName: net.blackphoton.phabric.core;singleton:=true
+Bundle-SymbolicName: in.twobytwo.phabric.core;singleton:=true
 Bundle-Version: 1.0.0.qualifier
-Bundle-Activator: net.blackphoton.phabric.core.PhabricatorCorePlugin
-Bundle-Vendor: blackphoton.net
+Bundle-Activator: in.twobytwo.phabric.core.PhabricatorCorePlugin
+Bundle-Vendor: twobytwo.in
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mylyn.commons.core;bundle-version="[3.20.0,4.0.0)",
  org.eclipse.mylyn.commons.net;bundle-version="[3.20.0,4.0.0)",
@@ -14,4 +14,4 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.gson;bundle-version="2.2.4"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: net.blackphoton.phabric.core
+Export-Package: in.twobytwo.phabric.core

@@ -4,12 +4,12 @@
    <extension
          point="org.eclipse.mylyn.tasks.ui.repositories">
       <connectorCore
-            class="net.blackphoton.phabric.core.PhabricRepositoryConnector"
+            class="in.twobytwo.phabric.core.PhabricRepositoryConnector"
             name="Phabricator Connector Core">
       </connectorCore>
       <connectorUi
             brandingIcon="icons/trac-icon.gif"
-            class="net.blackphoton.phabric.ui.PhabricConnectorUI"
+            class="in.twobytwo.phabric.ui.PhabricConnectorUI"
             name="Phabricator Connector UI ">
       </connectorUi>
    </extension>
@@ -24,8 +24,8 @@
    <extension
          point="org.eclipse.mylyn.tasks.ui.editors">
       <pageFactory
-            class="net.blackphoton.phabric.ui.editor.PhabricTaskEditorPageFactory"
-            id="net.blackphoton.phabric.ui.pageFactory">
+            class="in.twobytwo.phabric.ui.editor.PhabricTaskEditorPageFactory"
+            id="in.twobytwo.phabric.ui.pageFactory">
       </pageFactory>
    </extension>
 
