@@ -13,7 +13,8 @@ import in.twobytwo.phabric.core.PhabricatorCorePlugin;
 
 public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPage implements ITaskRepositoryPage {
 
-	private StringFieldEditor lblToken;
+	private static final String API_TOKEN = "apiToken";
+	private StringFieldEditor fldToken;
 
 	public PhabricRepositorySettingsPage(TaskRepository repository) {
 		super("Phabricator Repository Settings", "Settings for Phabricator repository", repository);
@@ -28,7 +29,7 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 		super.createControl(parent);
 		addRepositoryTemplatesToServerUrlCombo();
 
-		lblToken = new StringFieldEditor("apiToken", "API Token", StringFieldEditor.UNLIMITED,
+		fldToken = new StringFieldEditor(API_TOKEN, "API Token", StringFieldEditor.UNLIMITED,
 				innerComposite.getContent()) {
 			@Override
 			protected void valueChanged() {
@@ -48,8 +49,8 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 	@Override
 	public boolean isPageComplete() {
 		// make sure "Automatic" is not selected as a version
-		return super.isPageComplete() && lblToken != null && lblToken.getStringValue() != null
-				&& lblToken.getStringValue() != "";
+		return super.isPageComplete() && fldToken != null && fldToken.getStringValue() != null
+				&& fldToken.getStringValue() != "";
 	}
 
 	@Override
@@ -71,6 +72,13 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 	}
 
 	public class PhabricatorValidator extends Validator {
+		private String repositoryUrl;
+		private String apiToken;
+
+		public PhabricatorValidator(TaskRepository repository, String apiToken) {
+			this.repositoryUrl = repository.getUrl();
+			this.apiToken = apiToken;
+		}
 
 		@Override
 		public void run(IProgressMonitor monitor) throws CoreException {
@@ -80,4 +88,13 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 
 	}
 
+	@Override
+	protected Validator getValidator(TaskRepository repository) {
+		return new PhabricatorValidator(repository, getApiToken());
+	}
+
+	private String getApiToken() {
+
+		return fldToken.getStringValue();
+	}
 }
