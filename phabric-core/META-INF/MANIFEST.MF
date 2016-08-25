@@ -14,6 +14,9 @@ Require-Bundle: org.eclipse.core.runtime,
  com.google.gson;bundle-version="2.2.4"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: in.twobytwo.phabric.core
-Bundle-ClassPath: lib/okhttp-3.4.1.jar,
- .
+Export-Package: in.twobytwo.phabric.core,
+ in.twobytwo.phabric.core.client,
+ in.twobytwo.phabric.core.model
+Bundle-ClassPath: .,
+ lib/okhttp-3.4.1.jar,
+ lib/okio-1.9.0.jar

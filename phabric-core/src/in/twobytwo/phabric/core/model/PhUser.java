@@ -48,4 +48,9 @@ public class PhUser extends PhObject {
 	public void setRoles(List<String> roles) {
 		this.roles = roles;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("%s : %s [%s]", getUserName(), getRealName(), getPhid());
+	}
 }
