@@ -11,6 +11,8 @@ public class PhabricatorUiPlugin extends AbstractUIPlugin {
 	// The plug-in ID
 	public static final String PLUGIN_ID = "in.twobytwo.phabric.ui"; //$NON-NLS-1$
 
+	public static final String ID_PLUGIN = "in.twobytwo.phabric.ui";
+
 	// The shared instance
 	private static PhabricatorUiPlugin plugin;
 	
