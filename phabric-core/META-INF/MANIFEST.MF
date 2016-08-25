@@ -7,11 +7,14 @@ Bundle-Activator: in.twobytwo.phabric.core.PhabricatorCorePlugin
 Bundle-Vendor: twobytwo.in
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.mylyn.commons.core;bundle-version="[3.20.0,4.0.0)",
- org.eclipse.mylyn.commons.net;bundle-version="[3.20.0,4.0.0)",
  org.eclipse.mylyn.context.core;bundle-version="[3.20.0,4.0.0)",
  org.eclipse.mylyn.tasks.core;bundle-version="[3.21.0,4.0.0)",
- org.apache.httpcomponents.httpclient;bundle-version="4.3.6",
  com.google.gson;bundle-version="2.2.4"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: in.twobytwo.phabric.core
+Export-Package: in.twobytwo.phabric.core,
+ in.twobytwo.phabric.core.client,
+ in.twobytwo.phabric.core.model
+Bundle-ClassPath: .,
+ lib/okhttp-3.4.1.jar,
+ lib/okio-1.9.0.jar
