@@ -4,6 +4,10 @@ import org.eclipse.mylyn.commons.workbench.forms.SectionComposite;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.wizards.AbstractRepositoryQueryPage2;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.layout.GridLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Label;
 
 import in.twobytwo.phabric.ui.wizard.Messages;
 
@@ -24,8 +28,19 @@ public class PhabricQueryPage extends AbstractRepositoryQueryPage2 {
 
 	@Override
 	protected void createPageContent(SectionComposite parent) {
-		// TODO Auto-generated method stub
+		Composite control = parent.getContent();
 
+		GridLayout layout = new GridLayout(4, false);
+		layout.marginWidth = 0;
+		layout.marginHeight = 0;
+		control.setLayout(layout);
+
+		createDefaultGroup(control);
+	}
+
+	private void createDefaultGroup(Composite control) {
+		Label searchLabel = new Label(control, SWT.LEFT);
+		searchLabel.setText("Search For");
 	}
 
 	@Override
