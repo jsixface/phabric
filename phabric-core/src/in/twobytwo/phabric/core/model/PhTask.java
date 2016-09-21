@@ -2,8 +2,7 @@ package in.twobytwo.phabric.core.model;
 
 import java.util.List;
 
-public class PhTask extends PhObject{
-	private String id;
+public class PhTask extends PhItem{
 	private String authorPHID;
 	private String ownerPHID;
 	private List<String> ccPHIDs;
@@ -20,14 +19,6 @@ public class PhTask extends PhObject{
 	private String dateCreated;
 	private String dateModified;
 	private List<String> dependsOnTaskPHIDs;
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
 
 	public String getAuthorPHID() {
 		return authorPHID;
