@@ -1,5 +1,7 @@
 package in.twobytwo.phabric.ui.wizard;
 
+import static in.twobytwo.phabric.core.PhabricConstants.PROP_API_TOKEN;
+
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
@@ -18,7 +20,6 @@ import in.twobytwo.phabric.ui.PhabricatorUiPlugin;
 
 public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPage implements ITaskRepositoryPage {
 
-	private static final String API_TOKEN = "apiToken";
 	private StringFieldEditor fldToken;
 
 	public PhabricRepositorySettingsPage(TaskRepository repository) {
@@ -34,7 +35,7 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 		super.createControl(parent);
 		addRepositoryTemplatesToServerUrlCombo();
 
-		fldToken = new StringFieldEditor(API_TOKEN, "API Token", StringFieldEditor.UNLIMITED,
+		fldToken = new StringFieldEditor(PROP_API_TOKEN, "API Token", StringFieldEditor.UNLIMITED,
 				innerComposite.getContent()) {
 			@Override
 			protected void valueChanged() {
@@ -49,7 +50,8 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 				return 2;
 			}
 		};
-		fldToken.setStringValue(getRepository() == null ? "" : getRepository().getProperty(API_TOKEN));
+		fldToken.setStringValue(
+				getRepository() == null ? "" : getRepository().getProperty(PROP_API_TOKEN));
 	}
 
 	@Override
@@ -77,7 +79,7 @@ public class PhabricRepositorySettingsPage extends AbstractRepositorySettingsPag
 
 	@Override
 	public void performFinish(TaskRepository repository) {
-		repository.setProperty(API_TOKEN, fldToken != null ? fldToken.getStringValue() : "");
+		repository.setProperty(PROP_API_TOKEN, fldToken != null ? fldToken.getStringValue() : "");
 		super.performFinish(repository);
 	}
 
