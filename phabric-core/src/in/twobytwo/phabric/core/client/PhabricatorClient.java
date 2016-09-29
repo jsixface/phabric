@@ -7,6 +7,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import in.twobytwo.phabric.core.model.PhResponse;
+import in.twobytwo.phabric.core.model.PhTaskSearch;
 import in.twobytwo.phabric.core.model.PhUser;
 import okhttp3.MediaType;
 import okhttp3.OkHttpClient;
@@ -58,6 +59,10 @@ public class PhabricatorClient {
 			e.printStackTrace();
 		}
 		return null;
+
+	}
+
+	public void queryTasks(PhTaskSearch search) {
 
 	}
 

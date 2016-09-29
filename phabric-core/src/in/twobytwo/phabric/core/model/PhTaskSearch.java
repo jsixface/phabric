@@ -1,5 +1,6 @@
 package in.twobytwo.phabric.core.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,6 +16,47 @@ public class PhTaskSearch {
 	private List<PhTaskStatus> statuses;
 	private int limit;
 	private int offset;
+
+	/*
+	 * Functionality functions
+	 */
+
+	public String getSearchQuery() {
+		return null;
+	}
+
+	public void addId(Integer id) {
+		if (ids == null) {
+			ids = new ArrayList<>();
+		}
+		ids.add(id);
+	}
+
+	public void addPhid(String phid) {
+		if (phids == null) {
+			phids = new ArrayList<>();
+		}
+		phids.add(phid);
+	}
+
+	public void addAuthors(String author) {
+		if (authors == null) {
+			authors = new ArrayList<>();
+		}
+		authors.add(author);
+	}
+
+	public void addProjects(String project) {
+		if (projects == null) {
+			projects = new ArrayList<>();
+		}
+		projects.add(project);
+	}
+	
+
+	/*
+	 * Getters and setters
+	 */
 
 	public List<Integer> getIds() {
 		return ids;
