@@ -2,7 +2,7 @@ package in.twobytwo.phabric.core.model;
 
 import java.util.List;
 
-public class PhUser extends PhObject {
+public class PhUser extends PhItem {
 	private String userName;
 	private String realName;
 	private String image;
