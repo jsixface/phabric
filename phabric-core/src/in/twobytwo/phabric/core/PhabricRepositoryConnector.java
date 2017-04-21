@@ -8,6 +8,7 @@ import java.util.Map;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
 import org.eclipse.mylyn.tasks.core.AbstractRepositoryConnector;
 import org.eclipse.mylyn.tasks.core.IRepositoryQuery;
 import org.eclipse.mylyn.tasks.core.ITask;
@@ -24,14 +25,12 @@ public class PhabricRepositoryConnector extends AbstractRepositoryConnector {
 
 	@Override
 	public boolean canCreateNewTask(TaskRepository repository) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
 	public boolean canCreateTaskFromKey(TaskRepository repository) {
-		// TODO Auto-generated method stub
-		return false;
+		return true;
 	}
 
 	@Override
@@ -79,7 +78,7 @@ public class PhabricRepositoryConnector extends AbstractRepositoryConnector {
 	public IStatus performQuery(TaskRepository repository, IRepositoryQuery query, TaskDataCollector collector,
 			ISynchronizationSession session, IProgressMonitor monitor) {
 		// TODO Auto-generated method stub
-		return null;
+		return Status.OK_STATUS;
 	}
 
 	@Override

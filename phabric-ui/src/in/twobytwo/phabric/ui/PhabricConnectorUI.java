@@ -7,8 +7,10 @@ import org.eclipse.mylyn.tasks.core.ITaskMapping;
 import org.eclipse.mylyn.tasks.core.TaskRepository;
 import org.eclipse.mylyn.tasks.ui.AbstractRepositoryConnectorUi;
 import org.eclipse.mylyn.tasks.ui.wizards.ITaskRepositoryPage;
+import org.eclipse.mylyn.tasks.ui.wizards.RepositoryQueryWizard;
 
 import in.twobytwo.phabric.core.PhabricatorCorePlugin;
+import in.twobytwo.phabric.ui.wizard.PhabricQueryPage;
 import in.twobytwo.phabric.ui.wizard.PhabricRepositorySettingsPage;
 
 public class PhabricConnectorUI extends AbstractRepositoryConnectorUi {
@@ -34,8 +36,9 @@ public class PhabricConnectorUI extends AbstractRepositoryConnectorUi {
 
 	@Override
 	public IWizard getQueryWizard(TaskRepository repository, IRepositoryQuery query) {
-		// TODO Auto-generated method stub
-		return null;
+		RepositoryQueryWizard wizard = new RepositoryQueryWizard(repository);
+		wizard.addPage(new PhabricQueryPage(repository, query));
+		return wizard;
 	}
 
 	@Override
