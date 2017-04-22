@@ -77,7 +77,7 @@ public class PhabricRepositoryConnector extends AbstractRepositoryConnector {
 	@Override
 	public IStatus performQuery(TaskRepository repository, IRepositoryQuery query, TaskDataCollector collector,
 			ISynchronizationSession session, IProgressMonitor monitor) {
-		// TODO Auto-generated method stub
+		System.out.println(this.getClass() + "performing Query alright.");
 		return Status.OK_STATUS;
 	}
 
